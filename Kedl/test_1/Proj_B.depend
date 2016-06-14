@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1465421820 source:d:\dropbox\uni\scientific computing\git_scicomp16\proj_b\main.cpp
+	<iostream>
+	"MyVector.h"
+	"MyMatrix.h"
+	"MyMatrixCRS.h"
+
+1465421820 d:\dropbox\uni\scientific computing\git_scicomp16\proj_b\myvector.h
+
+1465409914 d:\dropbox\uni\scientific computing\git_scicomp16\proj_b\mymatrix.h
+
+1465416190 d:\dropbox\uni\scientific computing\git_scicomp16\proj_b\mymatrixcrs.h
+
+1465411417 source:d:\dropbox\uni\scientific computing\git_scicomp16\proj_b\mymatrix.cpp
+	<iostream>
+	<string>
+	<fstream>
+	<cassert>
+	<map>
+	"MyVector.h"
+	"MyMatrix.h"
+	"MyMatrixCRS.h"
+
+1465411417 source:d:\dropbox\uni\scientific computing\git_scicomp16\proj_b\mymatrixcrs.cpp
+	<iostream>
+	<string>
+	<cassert>
+	<map>
+	<cmath>
+	<fstream>
+	"MyVector.h"
+	"MyMatrix.h"
+	"MyMatrixCRS.h"
+
+1465422322 source:d:\dropbox\uni\scientific computing\git_scicomp16\proj_b\myvector.cpp
+	<iostream>
+	<fstream>
+	<cassert>
+	<cmath>
+	"MyVector.h"
+
