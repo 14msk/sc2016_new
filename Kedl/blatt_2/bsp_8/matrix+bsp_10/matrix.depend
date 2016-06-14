@@ -1,0 +1,121 @@
+# depslib dependency file v1.0
+1463590308 source:/home/pia/c++/blatt_2/bsp_7/matrix/jacobi.cpp
+	"jacobi.hpp"
+
+1463590308 /home/pia/c++/blatt_2/bsp_7/matrix/jacobi.hpp
+	"matrix.hpp"
+
+1463941578 /home/pia/c++/blatt_2/bsp_7/matrix/matrix.hpp
+	"myvector.h"
+
+1463919560 /home/pia/c++/blatt_2/bsp_7/matrix/myvector.h
+	<iostream>
+	<initializer_list>
+	"myexceptions.h"
+
+1457429336 /home/pia/c++/blatt_2/bsp_7/matrix/myexceptions.h
+
+1463941249 source:/home/pia/c++/blatt_2/bsp_7/matrix/matrix.cpp
+	"matrix.hpp"
+	<iomanip>
+	<math.h>
+
+1457429260 source:/home/pia/c++/blatt_2/bsp_7/matrix/myexceptions.cpp
+	<iostream>
+	<cstdlib>
+	"myexceptions.h"
+
+1463918711 source:/home/pia/c++/blatt_2/bsp_7/matrix/myvector.cpp
+	<iostream>
+	<algorithm>
+	<initializer_list>
+	<new>
+	<cassert>
+	<iomanip>
+	"myvector.h"
+
+1463941578 source:/home/pia/c++/blatt_2/bsp_7/matrix/main.cpp
+	<iostream>
+	<iomanip>
+	<fstream>
+	"matrix.hpp"
+	"myvector.h"
+
+1463947256 source:/home/pia/c++/blatt_2/bsp_7/matrix+bsp_10/main.cpp
+	<iostream>
+	<iomanip>
+	<fstream>
+	<ctime>
+	<ratio>
+	<chrono>
+	"matrix.hpp"
+	"myvector.h"
+
+1463947866 /home/pia/c++/blatt_2/bsp_7/matrix+bsp_10/matrix.hpp
+	"myvector.h"
+
+1463944080 /home/pia/c++/blatt_2/bsp_7/matrix+bsp_10/myvector.h
+	<iostream>
+	<initializer_list>
+	"myexceptions.h"
+
+1463947902 /home/pia/c++/blatt_2/bsp_7/matrix+bsp_10/myexceptions.h
+
+1463947276 source:/home/pia/c++/blatt_2/bsp_7/matrix+bsp_10/matrix.cpp
+	"matrix.hpp"
+	<iomanip>
+	<math.h>
+
+1457429260 source:/home/pia/c++/blatt_2/bsp_7/matrix+bsp_10/myexceptions.cpp
+	<iostream>
+	<cstdlib>
+	"myexceptions.h"
+
+1463918711 source:/home/pia/c++/blatt_2/bsp_7/matrix+bsp_10/myvector.cpp
+	<iostream>
+	<algorithm>
+	<initializer_list>
+	<new>
+	<cassert>
+	<iomanip>
+	"myvector.h"
+
+1465051950 source:/home/pia/c++/blatt_2/bsp_8/matrix+bsp_10/main.cpp
+	<iostream>
+	<iomanip>
+	<fstream>
+	<ctime>
+	<ratio>
+	<chrono>
+	"matrix.hpp"
+	"myvector.h"
+
+1464634061 /home/pia/c++/blatt_2/bsp_8/matrix+bsp_10/matrix.hpp
+	"myvector.h"
+
+1464457367 /home/pia/c++/blatt_2/bsp_8/matrix+bsp_10/myvector.h
+	<iostream>
+	<initializer_list>
+	"myexceptions.h"
+
+1463947902 /home/pia/c++/blatt_2/bsp_8/matrix+bsp_10/myexceptions.h
+
+1464636210 source:/home/pia/c++/blatt_2/bsp_8/matrix+bsp_10/matrix.cpp
+	"matrix.hpp"
+	<iomanip>
+	<math.h>
+
+1457429260 source:/home/pia/c++/blatt_2/bsp_8/matrix+bsp_10/myexceptions.cpp
+	<iostream>
+	<cstdlib>
+	"myexceptions.h"
+
+1464636888 source:/home/pia/c++/blatt_2/bsp_8/matrix+bsp_10/myvector.cpp
+	<iostream>
+	<algorithm>
+	<initializer_list>
+	<new>
+	<cassert>
+	<iomanip>
+	"myvector.h"
+

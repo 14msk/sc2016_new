@@ -1,0 +1,4 @@
+src/main.cpp: In function ‘int main(int, char**)’:
+src/main.cpp:18:7: warning: unused variable ‘unused’ [-Wunused-variable]
+   int unused;
+       ^

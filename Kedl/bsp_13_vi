@@ -1,0 +1,14 @@
+#!/bin/bash
+cd ~/blatt_3/Kurs-C
+
+#Ueberpruefen von Dateien auf bestimmte Schlüsselwörter (break, continue, goto)
+
+grep -Eq "goto" ./SS08/bsp_25_fkt.cpp || echo "//goto" >> ./SS08/bsp_25_fkt.cpp 
+
+for i in $( find */bsp_25*fkt* ); do
+    grep -Eq "break|continue|goto" ${i} && echo -e "\033[31m${?} ERR ${i} enthaelt break/continue/goto\033[0m";\
+    grep -En "break|continue|goto" ${i} /dev/null || echo -e "\033[32m${?} OK  ${i}\033[0m"
+done
+
+cd ~
+exit 0

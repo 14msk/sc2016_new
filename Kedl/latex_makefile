@@ -1,0 +1,33 @@
+#Makefile fuer Kurs-C/Script
+
+TEX = pdflatex -shell-escape -interaction=nonstopmode -file-line-error
+BIB = bibtex
+
+FILE = main
+
+.PHONY: all view clean
+
+all : $(FILE).pdf
+
+view :
+	gnome-open $(FILE).pdf
+
+$(FILE).pdf : $(FILE).tex $(FILE).bbl $(FILE).blg
+	$(TEX) $(FILE).tex
+
+$(FILE).bbl $(FILE).blg : $(FILE).bib $(FILE).aux
+	$(BIB) $(FILE)
+
+$(FILE).aux : $(FILE).tex
+	$(TEX) $(FILE).tex
+
+$(FILE).bib : $(FILE).tex
+	$(TEX) $(FILE).tex
+
+clean:
+	rm $(FILE).aux \
+	$(FILE).blg  \
+	$(FILE).out  \
+	$(FILE).bbl  \
+	$(FILE).log  \
+	$(FILE).pdf

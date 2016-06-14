@@ -1,0 +1,92 @@
+# depslib dependency file v1.0
+1463412401 source:/home/pia/c++/blatt_2/bsp_7/mymatrix/main.cpp
+	<iostream>
+	<fstream>
+	"mymatrix.hpp"
+
+1457429260 source:/home/pia/c++/blatt_2/bsp_7/mymatrix/myexceptions.cpp
+	<iostream>
+	<cstdlib>
+	"myexceptions.h"
+
+1457429336 /home/pia/c++/blatt_2/bsp_7/mymatrix/myexceptions.h
+
+1463942703 source:/home/pia/c++/blatt_2/bsp_7/mymatrix/myvector.cpp
+	<iostream>
+	<algorithm>
+	<initializer_list>
+	<new>
+	<cassert>
+	<iomanip>
+	"myvector.h"
+
+1463942728 /home/pia/c++/blatt_2/bsp_7/mymatrix/myvector.h
+	<iostream>
+	<initializer_list>
+	"myexceptions.h"
+
+1463943355 source:/home/pia/c++/blatt_2/bsp_7/mymatrix/mymatrix.cpp
+	"mymatrix.hpp"
+
+1463943778 /home/pia/c++/blatt_2/bsp_7/mymatrix/mymatrix.hpp
+	"myvector.h"
+
+1457429260 source:/home/pia/c++/blatt_2/bsp_8_&_10/mymatrix/myexceptions.cpp
+	<iostream>
+	<cstdlib>
+	"myexceptions.h"
+
+1457429336 /home/pia/c++/blatt_2/bsp_8_&_10/mymatrix/myexceptions.h
+
+1463943355 source:/home/pia/c++/blatt_2/bsp_8_&_10/mymatrix/mymatrix.cpp
+	"mymatrix.hpp"
+
+1463943778 /home/pia/c++/blatt_2/bsp_8_&_10/mymatrix/mymatrix.hpp
+	"myvector.h"
+
+1463942728 /home/pia/c++/blatt_2/bsp_8_&_10/mymatrix/myvector.h
+	<iostream>
+	<initializer_list>
+	"myexceptions.h"
+
+1463942703 source:/home/pia/c++/blatt_2/bsp_8_&_10/mymatrix/myvector.cpp
+	<iostream>
+	<algorithm>
+	<initializer_list>
+	<new>
+	<cassert>
+	<iomanip>
+	"myvector.h"
+
+1463948086 source:/home/pia/c++/blatt_2/bsp_8/mymatrix/main.cpp
+	<iostream>
+	<fstream>
+	"mymatrix.hpp"
+
+1464635879 /home/pia/c++/blatt_2/bsp_8/mymatrix/mymatrix.hpp
+	"myvector.h"
+
+1464636556 /home/pia/c++/blatt_2/bsp_8/mymatrix/myvector.h
+	<iostream>
+	<initializer_list>
+	"myexceptions.h"
+
+1457429336 /home/pia/c++/blatt_2/bsp_8/mymatrix/myexceptions.h
+
+1457429260 source:/home/pia/c++/blatt_2/bsp_8/mymatrix/myexceptions.cpp
+	<iostream>
+	<cstdlib>
+	"myexceptions.h"
+
+1464636644 source:/home/pia/c++/blatt_2/bsp_8/mymatrix/mymatrix.cpp
+	"mymatrix.hpp"
+
+1464636413 source:/home/pia/c++/blatt_2/bsp_8/mymatrix/myvector.cpp
+	<iostream>
+	<algorithm>
+	<initializer_list>
+	<new>
+	<cassert>
+	<iomanip>
+	"myvector.h"
+
