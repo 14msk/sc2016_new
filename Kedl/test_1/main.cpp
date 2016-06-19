@@ -61,11 +61,12 @@ int main() {
     cout << "#knoten  " << v.getNumNodes() << endl << endl;
     cout << "#Dreiecke   " << v.getNumTriangles() << endl;
     cout << v._xCoords << endl;
-    cout << v._yCoords << endl;
+    cout << v._yCoords << endl << endl;
+    for (int i = 0; i < 9; i++) cout << v._Topology[i] << endl;
 
 
 
-    //v.WriteToBinary("mesh_out.bin");
+    v.WriteToBinary("mesh_out_v3.bin");
     return 0;
 }
 

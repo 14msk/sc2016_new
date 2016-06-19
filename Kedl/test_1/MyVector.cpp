@@ -219,6 +219,14 @@ void MyVector::WriteToBinary(string const& OutFileName) const
 
    outFile.write(reinterpret_cast<const char*>(&_length), 4);
    outFile.write(reinterpret_cast<const char*>(_val), _length*8);
+   cout << "MyVector::WriteToBinary: " << _length << " --> " << OutFileName << endl;
+}
+
+void MyVector::VectorToBinary(string const& OutFileName) const
+{
+   ofstream outFile(OutFileName, ofstream::binary | ofstream::app);
+
+   outFile.write(reinterpret_cast<const char*>(_val), _length*8);
 
    cout << "MyVector::WriteToBinary: " << _length << " --> " << OutFileName << endl;
 }

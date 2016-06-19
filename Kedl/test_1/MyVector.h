@@ -143,6 +143,7 @@ public:
    * @param [in] OutFileName Name des Files
    */
    void ReadFromBinary(string const& InFileName, uint32_t offset);
+   void VectorToBinary(string const& OutFileName) const;
 
 
 private:
