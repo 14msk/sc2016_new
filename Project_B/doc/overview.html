@@ -29,13 +29,14 @@ h1{font-size:138.5%;}h2{font-size:123.1%;}h3{font-size:108%;}h1,h2,h3{margin:1em
         <h2>Summary</h2>
         A mesh of triangles shall be read from a binary file. <span style="font-family: monospace;"><span
             style="font-family: arial,helvetica,clean,sans-serif;"></span></span>The
-        quality of this mesh is established by computing the ratio radius of
-        incircle : radius of circumcircle for the individual
-        triangles.Subsequently an attempt is made to improve mesh quality.
-        Eventually the improved mesh is written to a file again.<br>
+        quality of this mesh is established by computing the ratio inradius :
+        circumradius for the individual triangles.Subsequently an attempt is
+        made to improve mesh quality. Eventually the improved mesh is written to
+        a file again.<br>
         <h2>Approach</h2>
         <ol>
-          <li><span style="font-weight: bold;">Structure of input file</span><br>
+          <li>
+            <h3><span style="font-weight: bold;">Structure of input file</span></h3>
             <br>
             The mesh is read from a binary file, which has to have the following
             structure:<br>
@@ -82,14 +83,15 @@ h1{font-size:138.5%;}h2{font-size:123.1%;}h3{font-size:108%;}h1,h2,h3{margin:1em
               </tbody>
             </table>
           </li>
-          <li><span style="font-weight: bold;">Determinig mesh quality</span><br>
+          <li>
+            <h3><span style="font-weight: bold;">Determinig mesh quality</span></h3>
             <br>
             <div style="text-align: left;"> Mesh quality is tested by computing
-              the ratio <span style="font-weight: bold;">radius of incircle :
-                radius of circumcircle</span> for each triangle. The ideal value
-              would be <span style="font-weight: bold;">1 : 2</span> and would
-              be obtained oif the triangle was equilateral. To assess mesh
-              quality the average value&nbsp; as well as the worst value for an
+              the ratio <span style="font-weight: bold;">inradius :
+                circumradius</span> for each triangle. The ideal value would be
+              <span style="font-weight: bold;">1 : 2</span> and would be
+              obtained oif the triangle was equilateral. To assess mesh quality
+              the average value&nbsp; as well as the worst value for an
               individual triangle is calculated as the average value on its own
               does not always deliver significant information on the mesh's
               improvement. Take the following mesh for example. Before mesh
@@ -99,9 +101,9 @@ h1{font-size:138.5%;}h2{font-size:123.1%;}h3{font-size:108%;}h1,h2,h3{margin:1em
               -&nbsp; if you're looking just at the numbers and don't have a
               picture to go by this does not seem to be much of an improvement.
               However, if you have the additional information that for the
-              original mesh the worst value for the ratio&nbsp; <span style="font-weight: bold;">radius
-                of incircle : radius of circumcircle</span> is <span style="font-weight: bold;">1
-                : 19.2571</span> while for the improved mesh it is <span style="font-weight: bold;">1
+              original mesh the worst value for the ratio&nbsp; <span style="font-weight: bold;">inradius
+                : circumradius</span> is <span style="font-weight: bold;">1 :
+                19.2571</span> while for the improved mesh it is <span style="font-weight: bold;">1
                 : 2.92707</span> it is much easier to get an idea of how much
               the mesh has changed.</div>
           </li>
@@ -122,8 +124,112 @@ h1{font-size:138.5%;}h2{font-size:123.1%;}h3{font-size:108%;}h1,h2,h3{margin:1em
               </tr>
             </tbody>
           </table>
-          <br>
-          <li><span style="font-weight: bold;">Mesh improvement </span><br>
+          The inradius&nbsp;
+          <math display="inline">
+            <!--  Created with FireMath www.firemath.info  -->
+            <mrow>
+              <mi>I</mi> </mrow> </math> and circumcircle
+          <math display="inline">
+            <!--  Created with FireMath www.firemath.info  -->
+            <mrow>
+              <mi>C</mi> </mrow> </math> are calculated with
+          <math display="inline">
+            <!--  Created with FireMath www.firemath.info  -->
+            <mrow>
+              <mrow>
+                <mi>I</mi>
+                <mo>=</mo> </mrow>
+              <msqrt>
+                <mfrac>
+                  <mrow>
+                    <mfenced open="(" close=")" separators=",">
+                      <mrow>
+                        <mi>s</mi>
+                        <mo>-</mo>
+                        <mi>a</mi> </mrow> </mfenced>
+                    <mfenced open="(" close=")" separators=",">
+                      <mrow>
+                        <mi>s</mi>
+                        <mo>-</mo>
+                        <mi>b</mi> </mrow> </mfenced>
+                    <mfenced open="(" close=")" separators=",">
+                      <mrow>
+                        <mi>s</mi>
+                        <mo>-</mo>
+                        <mi>c</mi> </mrow> </mfenced> </mrow>
+                  <mrow>
+                    <mi>s</mi> </mrow> </mfrac> </msqrt> </mrow> </math>
+          and
+          <math display="inline">
+            <!--  Created with FireMath www.firemath.info  -->
+            <mrow>
+              <mi>C</mi>
+              <mo>=</mo>
+              <mfrac>
+                <mrow>
+                  <mi>a</mi>
+                  <mi>b</mi>
+                  <mi>c</mi> </mrow>
+                <mrow>
+                  <mn>4</mn>
+                  <mi>A</mi> </mrow> </mfrac>
+            </mrow>
+          </math>
+          where
+          <math display="inline">
+            <!--  Created with FireMath www.firemath.info  -->
+            <mrow>
+              <mi>a</mi>
+              <mn>,</mn>
+              <mi>b</mi>
+              <mn>,</mn>
+              <mi>c</mi>
+            </mrow>
+          </math>
+          are the length of the edges,
+          <math display="inline">
+            <!--  Created with FireMath www.firemath.info  -->
+            <mrow>
+              <mi>A</mi>
+              <mo>=</mo>
+              <msqrt>
+                <mi>s</mi>
+                <mfenced open="(" close=")" separators=",">
+                  <mrow>
+                    <mi>s</mi>
+                    <mo>-</mo>
+                    <mi>a</mi> </mrow> </mfenced>
+                <mfenced open="(" close=")" separators=",">
+                  <mrow>
+                    <mi>s</mi>
+                    <mo>-</mo>
+                    <mi>b</mi> </mrow> </mfenced>
+                <mfenced open="(" close=")" separators=",">
+                  <mrow>
+                    <mi>s</mi>
+                    <mo>-</mo>
+                    <mi>c</mi> </mrow> </mfenced> </msqrt>
+            </mrow>
+          </math> is the area and
+          <math display="inline">
+            <!--  Created with FireMath www.firemath.info  -->
+            <mrow>
+              <mi>s</mi>
+              <mo>=</mo>
+              <mfrac>
+                <mrow>
+                  <mi>a</mi>
+                  <mo>+</mo>
+                  <mi>b</mi>
+                  <mo>+</mo>
+                  <mi>c</mi> </mrow>
+                <mrow>
+                  <mn>2</mn> </mrow> </mfrac>
+            </mrow>
+          </math>
+          is half the circumference of the triangle. &nbsp; <br>
+          <li>
+            <h3><span style="font-weight: bold;">Mesh improvement </span></h3>
             <br>
             <span style="font-weight: bold;">Algorithm:</span><br>
             <div style="text-align: left;"> The x coordinates of the vertices
@@ -288,10 +394,8 @@ h1{font-size:138.5%;}h2{font-size:123.1%;}h3{font-size:108%;}h1,h2,h3{margin:1em
               <mtext>, ... , N </mtext>
               <mo>-</mo>
               <mn>1&nbsp; <br>
-              </mn></mrow> </math>
-        </ol>
-        <ol>
-          This leaves us with the following system of linear equations:
+              </mn></mrow> </math> This leaves us with the following system of
+          linear equations:
           <math display="inline">
             <!--  Created with FireMath www.firemath.info  -->
             <mrow>
@@ -451,7 +555,8 @@ h1{font-size:138.5%;}h2{font-size:123.1%;}h3{font-size:108%;}h1,h2,h3{margin:1em
           allowed iterations is surpassed, or the vertices barely move at all
           during one iteration.<br>
           <br>
-          <li><span style="font-weight: bold;">Special Cases </span><br>
+          <li>
+            <h3><span style="font-weight: bold;">Special Cases </span></h3>
             <br>
             In certain cases the algorithm described in the previous paragraph
             won't work. Take for example the following mesh:<br>
@@ -492,9 +597,11 @@ h1{font-size:138.5%;}h2{font-size:123.1%;}h3{font-size:108%;}h1,h2,h3{margin:1em
             the exactly same will be done for the opposite direction. Then the
             vertex will be moved just to the middle of the distance between
             these extremes.<br>
-            <span style="font-weight: bold;"> </span></li>
-          <li><span style=" font-weight: bold;"> </span><br>
           </li>
+          <li>
+            <h3>Result</h3>
+            Finally the improved mesh is written to a binary file of the same
+            structure as explained in Section 1 of this page.</li>
           <br>
           <br>
         </ol>
