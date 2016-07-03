@@ -31,11 +31,12 @@ h1{font-size:138.5%;}h2{font-size:123.1%;}h3{font-size:108%;}h1,h2,h3{margin:1em
             style="font-family: arial,helvetica,clean,sans-serif;"></span></span>The
         quality of this mesh is established by computing the ratio radius of
         incircle : radius of circumcircle for the individual
-        triangles.Subsequentl an attempt is made to improve mesh quality.
+        triangles.Subsequently an attempt is made to improve mesh quality.
         Eventually the improved mesh is written to a file again.<br>
         <h2>Approach</h2>
         <ol>
           <li><span style="font-weight: bold;">Structure of input file</span><br>
+            <br>
             The mesh is read from a binary file, which has to have the following
             structure:<br>
             <br>
@@ -82,6 +83,7 @@ h1{font-size:138.5%;}h2{font-size:123.1%;}h3{font-size:108%;}h1,h2,h3{margin:1em
             </table>
           </li>
           <li><span style="font-weight: bold;">Determinig mesh quality</span><br>
+            <br>
             <div style="text-align: left;"> Mesh quality is tested by computing
               the ratio <span style="font-weight: bold;">radius of incircle :
                 radius of circumcircle</span> for each triangle. The ideal value
@@ -108,11 +110,9 @@ h1{font-size:138.5%;}h2{font-size:123.1%;}h3{font-size:108%;}h1,h2,h3{margin:1em
             <tbody>
               <tr>
                 <td style="text-align: center;"><span style="font-weight: bold;">before
-                    manipulation<br>
-                  </span></td>
+                    manipulation </span></td>
                 <td style="text-align: center;"><span style="font-weight: bold;">after
-                    manipulation<br>
-                  </span></td>
+                    manipulation </span></td>
               </tr>
               <tr>
                 <td><img style="width: 584px; height: 525px;" alt=" " src="../img/mesh_1.jpeg"></td>
@@ -123,14 +123,340 @@ h1{font-size:138.5%;}h2{font-size:123.1%;}h3{font-size:108%;}h1,h2,h3{margin:1em
             </tbody>
           </table>
           <br>
-          <li><span style="font-weight: bold;">Mesh improvement<br>
-            </span>&lt;under construction&gt;</li>
-          <li><span style="font-weight: bold;">Special Cases<br>
-            </span><br>
+          <li><span style="font-weight: bold;">Mesh improvement </span><br>
+            <br>
+            <span style="font-weight: bold;">Algorithm:</span><br>
+            <div style="text-align: left;"> The x coordinates of the vertices
+              are given by
+              <math display="inline">
+                <!--  Created with FireMath www.firemath.info  -->
+                <mrow>
+                  <mfenced open="[" close="]" separators=",">
+                    <mrow>
+                      <msub>
+                        <mi>x</mi>
+                        <mn>0</mn> </msub>
+                      <mo>···</mo>
+                      <msub>
+                        <mi>x</mi>
+                        <mrow>
+                          <mi>N</mi>
+                          <mo>-</mo>
+                          <mn>1</mn> </mrow> </msub> </mrow> </mfenced> </mrow>
+              </math> . In the first step of the algorithm the new x-coordinates
+              <math display="inline">
+                <!--  Created with FireMath www.firemath.info  -->
+                <mrow>
+                  <msubsup>
+                    <mi>x</mi>
+                    <mi>i</mi>
+                    <mo>+</mo> </msubsup></mrow> </math> are then calculated
+              by the formula
+              <math display="inline"><!--  Created with FireMath www.firemath.info  -->
+                <mrow>
+                  <msubsup>
+                    <mi>x</mi>
+                    <mtext>i</mtext>
+                    <mo>+</mo> </msubsup>
+                  <mo>=</mo>
+                  <mfrac>
+                    <mrow>
+                      <mn>1</mn> </mrow>
+                    <mrow>
+                      <mrow>
+                        <msub>
+                          <mi>n</mi>
+                          <mrow>
+                            <mi>i</mi>
+                            <msub>
+                              <mspace></mspace>
+                              <mn>1</mn> </msub>
+                            <mo>+</mo> </mrow> </msub>
+                        <msub>
+                          <mi>n</mi>
+                          <msub>
+                            <mi>i</mi>
+                            <mn>2</mn> </msub> </msub> </mrow> </mrow> </mfrac>
+                  <mo>(</mo>
+                  <munder>
+                    <mo>∑</mo>
+                    <mrow>
+                      <mi>k</mi>
+                      <mo>∈</mo>
+                      <msub>
+                        <mi>J</mi>
+                        <mn>1</mn> </msub>
+                      <mfenced open="(" close=")" separators=",">
+                        <mrow>
+                          <mi>i</mi> </mrow> </mfenced> </mrow> </munder>
+                  <msubsup>
+                    <mi>x</mi>
+                    <mi>k</mi>
+                    <mo>+</mo> </msubsup>
+                  <mo>+</mo>
+                  <munder>
+                    <mo>∑</mo>
+                    <mrow>
+                      <mi>k</mi>
+                      <mo>∈</mo>
+                      <msub>
+                        <mi>J</mi>
+                        <mn>2</mn> </msub>
+                      <mfenced open="(" close=")" separators=",">
+                        <mrow>
+                          <mi>i</mi> </mrow> </mfenced> </mrow> </munder>
+                  <msub>
+                    <mi>x</mi>
+                    <mi>k</mi> </msub>
+                  <mo>)</mo> </mrow> </math></div>
+          </li>
+          <br>
+          &nbsp;where
+          <math display="inline"><!--  Created with FireMath www.firemath.info  -->
+            <mrow>
+              <msub>
+                <mi>n</mi>
+                <msub>
+                  <mi>i</mi>
+                  <mn>1</mn> </msub> </msub>
+              <mo>=</mo>
+              <mfenced open="|" close="|" separators=",">
+                <mrow>
+                  <msub>
+                    <mi>J</mi>
+                    <mn>1</mn> </msub>
+                  <mfenced open="(" close=")" separators=",">
+                    <mrow>
+                      <mi>i</mi> </mrow> </mfenced> </mrow> </mfenced> </mrow>
+            &nbsp;,&nbsp;
+            <mrow>
+              <msub>
+                <mi>n</mi>
+                <msub>
+                  <mi>i</mi>
+                  <mn>2</mn> </msub> </msub>
+              <mo>=</mo>
+              <mfenced open="|" close="|" separators=",">
+                <mrow>
+                  <msub>
+                    <mi>J</mi>
+                    <mn>2</mn> </msub>
+                  <mfenced open="(" close=")" separators=",">
+                    <mrow>
+                      <mi>i</mi></mrow></mfenced></mrow></mfenced></mrow></math>
+          ,
+          <math display="inline"></math><math display="inline">
+            <!--  Created with FireMath www.firemath.info  --></math><math display="inline">&nbsp;&nbsp;
+            <mrow><mrow><msub><mi>J</mi>
+                  <mn>1</mn> </msub>
+                <mfenced open="(" close=")" separators=",">
+                  <mrow>
+                    <mi>i</mi> </mrow> </mfenced>
+                <mtext>... vertices with index </mtext>
+                <mo>&lt;</mo>
+                <mi>i</mi> </mrow> </mrow> </math> and
+          <math display="inline">
+            <!--  Created with FireMath www.firemath.info  -->
+            <mrow>
+              <mrow>
+                <msub>
+                  <mi>J</mi>
+                  <mn>2</mn> </msub>
+                <mfenced open="(" close=")" separators=",">
+                  <mrow>
+                    <mi>i</mi> </mrow> </mfenced>
+                <mtext>... vertices with index </mtext>
+                <mo>&gt;</mo>
+                <mi>i</mi> </mrow></mrow></math>
+          <math display="inline"><mrow><mtext></mtext> </mrow></math><math display="inline">
+            <!--  Created with FireMath www.firemath.info  -->
+            <mrow>
+              <msubsup>
+                <mi>x</mi>
+                <mi>i</mi>
+                <mo>+</mo> </msubsup>
+              <mo>=</mo>
+              <msub>
+                <mi>x</mi>
+                <mi>i</mi> </msub> </mrow> </math> ... for boundary
+          vertices,&nbsp;
+          <math display="inline"><!--  Created with FireMat<mtext>, N </mtext> h www.firemath.info  -->
+            <mrow>
+              <mi>i</mi>
+              <mo>=</mo>
+              <mn>0</mn>
+              <mtext>, ... , N </mtext>
+              <mo>-</mo>
+              <mn>1&nbsp; <br>
+              </mn></mrow> </math>
+        </ol>
+        <ol>
+          This leaves us with the following system of linear equations:
+          <math display="inline">
+            <!--  Created with FireMath www.firemath.info  -->
+            <mrow>
+              <msubsup>
+                <mo><br>
+                  {</mo>
+                <mrow>
+                  <msubsup>
+                    <mi>x</mi>
+                    <mi>i</mi>
+                    <mo>+</mo> </msubsup>
+                  <mo>=</mo>
+                  <msub>
+                    <mi>x</mi>
+                    <mi>i</mi> </msub> ... for boundary vertices!
+                  <mspace width="0.5em"></mspace>
+                  <mspace width="0.5em"></mspace>
+                  <mspace width="0.5em"></mspace>
+                  <mi>i</mi>
+                  <mo>=</mo>
+                  <mn>0</mn>
+                  <mtext>, ... ,</mtext>
+                  <mspace width="0.5em"></mspace>
+                  <mi>N</mi>
+                  <mo>-</mo>
+                  <mn>1</mn> </mrow>
+                <mrow>
+                  <msubsup>
+                    <mi>x</mi>
+                    <mi>i</mi>
+                    <mo>+</mo> </msubsup>
+                  <mo>-</mo>
+                  <mfrac>
+                    <mrow>
+                      <mn>1</mn> </mrow>
+                    <mrow>
+                      <msub>
+                        <mi>n</mi>
+                        <msub>
+                          <mi>i</mi>
+                          <mn>1</mn> </msub> </msub>
+                      <mo>+</mo>
+                      <msub>
+                        <mi>n</mi>
+                        <msub>
+                          <mi>i</mi>
+                          <mn>2</mn> </msub> </msub> </mrow> </mfrac>
+                  <munder>
+                    <mo>∑</mo>
+                    <mrow>
+                      <mi>k</mi>
+                      <mo>∈</mo>
+                      <msub>
+                        <mi>J</mi>
+                        <mn>1</mn> </msub>
+                      <mfenced open="(" close=")" separators=",">
+                        <mrow>
+                          <mi>i</mi> </mrow> </mfenced> </mrow> </munder>
+                  <msubsup>
+                    <mi>x</mi>
+                    <mi>k</mi>
+                    <mo>+</mo> </msubsup>
+                  <mo>=</mo>
+                  <mfrac>
+                    <mrow>
+                      <mn>1</mn> </mrow>
+                    <mrow>
+                      <mrow>
+                        <msub>
+                          <mi>n</mi>
+                          <msub>
+                            <mi>i</mi>
+                            <mn>1</mn> </msub> </msub>
+                        <mo>+</mo>
+                        <msub>
+                          <mi>n</mi>
+                          <msub>
+                            <mi>i</mi>
+                            <mn>2</mn> </msub> </msub> </mrow> </mrow> </mfrac>
+                  <munder>
+                    <mo>∑</mo>
+                    <mrow>
+                      <mi>k</mi>
+                      <mo>∈</mo>
+                      <msub>
+                        <mi>J</mi>
+                        <mn>2</mn> </msub>
+                      <mfenced open="(" close=")" separators=",">
+                        <mrow>
+                          <mi>i</mi> </mrow> </mfenced> </mrow> </munder>
+                  <msub>
+                    <mi>x</mi>
+                    <mi>k</mi> </msub> </mrow> </msubsup> </mrow> </math> <br>
+          <br>
+          which can be written as
+          <math display="inline">
+            <!--  Created with FireMath www.firemath.info  -->
+            <mrow>
+              <mtext>M_lhs</mtext>
+              <mspace width="0.5em"></mspace>
+              <mo>*</mo>
+              <mo>[</mo>
+              <msubsup>
+                <mi>x</mi>
+                <mn>0</mn>
+                <mo>+</mo> </msubsup>
+              <mo>···</mo>
+              <msubsup>
+                <mi>x</mi>
+                <mrow>
+                  <mi>N</mi>
+                  <mo>-</mo>
+                  <mn>1</mn> </mrow>
+                <mo>+</mo> </msubsup>
+              <msup>
+                <mo>]</mo>
+                <mo>⊤</mo> </msup>
+              <mo>=</mo>
+              <mtext>M_rhs</mtext>
+              <mspace width="0.5em"></mspace>
+              <mo>*</mo>
+              <mo>[</mo>
+              <msub>
+                <mi>x</mi>
+                <mn>0</mn> </msub>
+              <mo>···</mo>
+              <msub>
+                <mi>x</mi>
+                <mrow>
+                  <mi>N</mi>
+                  <mo>-</mo>
+                  <mn>1</mn> </mrow> </msub>
+              <msup>
+                <mo>]</mo>
+                <mo>⊤</mo> </msup> </mrow> </math> where M_lhs is a lower
+          triangular matrix where each entry on the diagonal is 1 and M_rhs is
+          an upper triangular Matrix for which the diagonal entry&nbsp;
+          <math display="inline">
+            <!--  Created with FireMath www.firemath.info  -->
+            <mrow>
+              <msub>
+                <mtext>(M_rhs)</mtext>
+                <mi>ii</mi> </msub> </mrow> </math> is given by 1, if the
+          vertex
+          <math display="inline">
+            <!--  Created with FireMath www.firemath.info  -->
+            <mrow>
+              <msub>
+                <mi>x</mi>
+                <mi>i</mi> </msub> </mrow> </math> is a boundary vertex and
+          by 0 else. <br>
+          This system of equations is then solved using the Gauss-Seidel-Method
+          and yields the x-coordinates for the improved mesh. The procedure for
+          the y-coordinates is exactly the same.<br>
+          <br>
+          This process then is repeated until either the maximum number of
+          allowed iterations is surpassed, or the vertices barely move at all
+          during one iteration.<br>
+          <br>
+          <li><span style="font-weight: bold;">Special Cases </span><br>
+            <br>
             In certain cases the algorithm described in the previous paragraph
-            won't work. Take for example the following mesh:<span style="font-weight: bold;"><br>
-              <br>
-            </span>
+            won't work. Take for example the following mesh:<br>
+            <br>
+            <span style="font-weight: bold;"> </span>
             <table style="width: 1267px; height: 530px;" border="1">
               <tbody>
                 <tr>
@@ -158,33 +484,29 @@ h1{font-size:138.5%;}h2{font-size:123.1%;}h3{font-size:108%;}h1,h2,h3{margin:1em
             If none of the elements filp over the algorithm does not have to be
             changed. If however, during one step of the algorithm one or more of
             the elements flip over the shifting of the respective vertex has to
-            be altered.<br>
-            <span style="font-weight: bold;"><br>
-              <br>
-            </span></li>
-          <li><span style=" font-weight: bold;"><br>
-            </span></li>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-        </ol>
-        <ol>
+            be altered. Yet if the vertex is just moved back to a point, scarce
+            before the element flips over this will leave us with some quite
+            'narrow' triangles, thus deterioirating mesh quality rather than
+            improving it. Therefore it will be calculated, how far the vertex
+            may be moved in one direction without elements flipping over, then
+            the exactly same will be done for the opposite direction. Then the
+            vertex will be moved just to the middle of the distance between
+            these extremes.<br>
+            <span style="font-weight: bold;"> </span></li>
+          <li><span style=" font-weight: bold;"> </span><br>
+          </li>
           <br>
           <br>
         </ol>
         <ol>
-          <br>
-          <br>
+        </ol>
+        <ol>
         </ol>
       </div>
-      <div id="yui-main"> </div>
       <div id="ft">
         <h4>Scientific Computing, SoSe 2016</h4>
       </div>
-      <div id="ft"> </div>
     </div>
+    <br>
   </body>
 </html>
